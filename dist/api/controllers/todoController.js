@@ -25,7 +25,7 @@ exports.list = (req, res) => {
         <td>${row.createdAt}</td>
       </tr>`;
             });
-            let htmlTable = `<!DOCTYPE html>
+            res.send(`<!DOCTYPE html>
       <html>
         <head>
             <style>
@@ -53,8 +53,7 @@ exports.list = (req, res) => {
             </table>
         </div>
       </body>
-      </html>`;
-            res.send(htmlTable);
+      </html>`);
         }
     });
 };

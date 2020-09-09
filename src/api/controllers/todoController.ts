@@ -23,8 +23,7 @@ export let list = (req: Request, res: Response) => {
       </tr>`;
     });
       
-      let htmlTable = 
-      `<!DOCTYPE html>
+      res.send(`<!DOCTYPE html>
       <html>
         <head>
             <style>
@@ -52,8 +51,7 @@ export let list = (req: Request, res: Response) => {
             </table>
         </div>
       </body>
-      </html>`
-      res.send(htmlTable);
+      </html>`);
     }
   });
 };

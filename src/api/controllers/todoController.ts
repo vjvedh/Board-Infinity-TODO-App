@@ -1,6 +1,7 @@
 // Importing Libraries
 import { Request, Response } from "express";
 import Todo from "../models/todo";
+import tableCreate from "../config/config";
 
 // Setting a duration variable to store duration period of current todo item added
 var dur: number = 0; 
@@ -11,47 +12,8 @@ export let list = (req: Request, res: Response) => {
     if (err) {
       res.send("Error!");
     } else {
-      let htmlTableRows = ``;
-      let data = {rows: todos};
-      data.rows.forEach((row) => {
-      htmlTableRows += `<tr>
-        <td>${row.taskName}</td>
-        <td>${row.taskDescription}</td>
-        <td>${row.creator}</td>
-        <td>${row.duration}</td>
-        <td>${row.createdAt}</td>
-      </tr>`;
-    });
-      
-      res.send(`<!DOCTYPE html>
-      <html>
-        <head>
-            <style>
-                table {
-                    border-collapse: collapse;
-                    width: 100%; }
-                th, td {
-                    text-align: left;
-                    padding: 8px; }
-                tr:nth-child(even) {background-color: #f2f2f2; }
-            </style>
-        </head>
-      <body>
-        <h2>TODO List</h2>
-        <div style="overflow-x:auto;">
-            <table>
-                <tr>
-                    <th>Task Name</th>
-                    <th>Task Description
-                    </th><th>Creator</th>
-                    <th>Duration(in mins)</th>
-                    <th>Created At</th>
-                </tr>
-            ${htmlTableRows}
-            </table>
-        </div>
-      </body>
-      </html>`);
+      let htmlTable = tableCreate(todos);
+      res.send(htmlTable);
     }
   });
 };

@@ -35,7 +35,7 @@ app.set("port", process.env.PORT || 5005);
 // MongoDB Connection
 connect_1.default(config_1.db);
 // API Endpoint for welcome page
-app.get("/", (req, res) => res.send("Welcome to TODO checkpoint"));
+app.get("/", (req, res) => res.send(config_1.homePage));
 // API Endpoints for show and add section
 app.get("/list", todoController.list);
 app.post("/add", todoController.add);

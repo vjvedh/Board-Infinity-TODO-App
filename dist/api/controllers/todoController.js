@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.add = exports.list = void 0;
 const todo_1 = __importDefault(require("../models/todo"));
+const config_1 = __importDefault(require("../config/config"));
 // Setting a duration variable to store duration period of current todo item added
 var dur = 0;
 // Api Endpoint: After GET resquest is used it will fetch all todos from DB and showing it into web page 
@@ -14,46 +15,8 @@ exports.list = (req, res) => {
             res.send("Error!");
         }
         else {
-            let htmlTableRows = ``;
-            let data = { rows: todos };
-            data.rows.forEach((row) => {
-                htmlTableRows += `<tr>
-        <td>${row.taskName}</td>
-        <td>${row.taskDescription}</td>
-        <td>${row.creator}</td>
-        <td>${row.duration}</td>
-        <td>${row.createdAt}</td>
-      </tr>`;
-            });
-            res.send(`<!DOCTYPE html>
-      <html>
-        <head>
-            <style>
-                table {
-                    border-collapse: collapse;
-                    width: 100%; }
-                th, td {
-                    text-align: left;
-                    padding: 8px; }
-                tr:nth-child(even) {background-color: #f2f2f2; }
-            </style>
-        </head>
-      <body>
-        <h2>TODO List</h2>
-        <div style="overflow-x:auto;">
-            <table>
-                <tr>
-                    <th>Task Name</th>
-                    <th>Task Description
-                    </th><th>Creator</th>
-                    <th>Duration(in mins)</th>
-                    <th>Created At</th>
-                </tr>
-            ${htmlTableRows}
-            </table>
-        </div>
-      </body>
-      </html>`);
+            let htmlTable = config_1.default(todos);
+            res.send(htmlTable);
         }
     });
 };

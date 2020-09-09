@@ -4,7 +4,7 @@ import connect from "./connect";
 
 // Importing Modules from file
 import * as todoController from "./api/controllers/todoController";
-import { db } from "./api/config/config";
+import { db, homePage } from "./api/config/config";
 
 // Express APP Configuration
 const app: Application = express();
@@ -15,7 +15,7 @@ app.set("port", process.env.PORT || 5005);
 connect(db);
 
 // API Endpoint for welcome page
-app.get("/", (req: Request, res: Response) => res.send("Welcome to TODO checkpoint"));
+app.get("/", (req: Request, res: Response) => res.send(homePage));
 
 // API Endpoints for show and add section
 app.get("/list", todoController.list);

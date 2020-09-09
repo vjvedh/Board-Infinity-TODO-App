@@ -10,7 +10,7 @@ app.set("port", process.env.PORT || 5005);
 
 
 const uri: string = "mongodb+srv://dbUser:dbUser@cluster.phm4v.gcp.mongodb.net/dbUser?retryWrites=true&w=majority";
-mongoose.connect(uri, (err: any) => {
+mongoose.connect(process.env.uri || uri, (err: any) => {
   if (err) {
     console.log(err.message);
   } else {

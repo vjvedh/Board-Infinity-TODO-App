@@ -1,30 +1,27 @@
+// Importing Libraries
 import express, { Application, Request, Response } from 'express';
-import mongoose from "mongoose";
+import connect from "./connect";
 
+// Importing Modules from file
 import * as todoController from "./api/controllers/todoController";
+import { db } from "./api/config/config";
 
 // Express APP Configuration
 const app: Application = express();
 app.use(express.json());
 app.set("port", process.env.PORT || 5005);
 
+// MongoDB Connection
+connect(db);
 
-const uri: string = "mongodb+srv://dbUser:dbUser@cluster.phm4v.gcp.mongodb.net/dbUser?retryWrites=true&w=majority";
-mongoose.connect(process.env.uri || uri, (err: any) => {
-  if (err) {
-    console.log(err.message);
-  } else {
-    console.log("Successfully Connected!");
-  }
-});
-
-// API Endpoint
+// API Endpoint for welcome page
 app.get("/", (req: Request, res: Response) => res.send("Welcome to TODO checkpoint"));
 
-// API Endpoints
+// API Endpoints for show and add section
 app.get("/list", todoController.list);
 app.post("/add", todoController.add);
 
+// Connection part for localserver for node app
 const server = app.listen(app.get("port"), () => {
-    console.log("App is running on http://localhost:%d", app.get("port"));
+    console.log("\x1b[32m", `App is running on http://localhost:${app.get("port")}`, "\x1b[0m");
 });

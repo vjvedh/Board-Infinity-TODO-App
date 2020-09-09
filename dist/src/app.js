@@ -41,5 +41,5 @@ app.get("/list", todoController.list);
 app.post("/add", todoController.add);
 // Connection part for localserver for node app
 const server = app.listen(app.get("port"), () => {
-    console.log("\x1b[32m", `App is running on http://localhost:${app.get("port")}`, "\x1b[0m");
+    console.log("App is running on http://localhost:%d", app.get("port"));
 });

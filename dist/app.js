@@ -25,13 +25,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Importing Libraries
 const express_1 = __importDefault(require("express"));
 const connect_1 = __importDefault(require("./connect"));
+require('dotenv').config();
 // Importing Modules from file
 const todoController = __importStar(require("./api/controllers/todoController"));
 const config_1 = require("./api/config/config");
 // Express APP Configuration
 const app = express_1.default();
 app.use(express_1.default.json());
-app.set("port", process.env.PORT || 5005);
+app.set("port", process.env.PORT || process.env.port);
 // MongoDB Connection
 connect_1.default(config_1.db);
 // API Endpoint for welcome page

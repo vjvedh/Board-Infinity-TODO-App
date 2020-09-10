@@ -1,6 +1,7 @@
 // Importing Libraries
 import express, { Application, Request, Response } from 'express';
 import connect from "./connect";
+require('dotenv').config();
 
 // Importing Modules from file
 import * as todoController from "./api/controllers/todoController";
@@ -9,7 +10,7 @@ import { db, homePage } from "./api/config/config";
 // Express APP Configuration
 const app: Application = express();
 app.use(express.json());
-app.set("port", process.env.PORT || 5005);
+app.set("port", process.env.PORT || process.env.port);
 
 // MongoDB Connection
 connect(db);

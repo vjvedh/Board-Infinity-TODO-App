@@ -76,7 +76,7 @@ npm run start
 * Created At : Date (Will Fetch current time) (not required)
 * Expire At : Date (Will be calculated automatically)
 
-If Duration is equal to 0: Then task will not be deleted
+If Duration is equal to 0: Then task will get deleted after 1 min
 
 ```bash
 { "taskName": "HELLO Example",

@@ -44,7 +44,7 @@ npm install
 All the typescript files are in the src folder. src folder has one sub folder: api and two files app.ts and connect.ts.
 Further api folder has three sub folders: config, controllers and models.
 
-![File System](demoFiles/FileStructure.png?raw=true "File System")
+![File System](demoFIles/FileStructure.png?raw=true "File System")
 
 * src/app.ts : This is the main typescript file and is used to launch server.
 * src/connect.ts : This typescript file is used to connect to the mongoDB database.
@@ -69,15 +69,15 @@ npm run start
 
 Link to Home Page: /
 
-![HOME_H](demoFiles/HOME_LOCALHOST.png?raw=true "HOME_H")
+![HOME_H](demoFIles/HOME_LOCALHOST.png?raw=true "HOME_H")
 
 Link to see all TODO's: /list
 
-![SHOW_H](demoFiles/GET_LOCALHOST.png?raw=true "SHOW_H")
+![SHOW_H](demoFIles/GET_LOCALHOST.png?raw=true "SHOW_H")
 
 Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
 
-![ADD_H](demoFiles/HOME_LOCALHOST.png?raw=true "ADD_H")
+![ADD_H](demoFIles/HOME_LOCALHOST.png?raw=true "ADD_H")
 
 ## App demo
 
@@ -103,15 +103,15 @@ git push heroku master
 
 Link to Home Page: /
 
-![HOME_Heroku](demoFiles/HOME_HEROKU.png?raw=true "HOME_Heroku")
+![HOME_Heroku](demoFIles/HOME_HEROKU.png?raw=true "HOME_Heroku")
 
 Link to see all TODO's: /list
 
-![SHOW_Heroku](demoFiles/GET_HEROKU.png?raw=true "SHOW_Heroku")
+![SHOW_Heroku](demoFIles/GET_HEROKU.png?raw=true "SHOW_Heroku")
 
 Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
 
-![ADD_Heroku](demoFiles/HOME_HEROKU.png?raw=true "ADD_Heroku")
+![ADD_Heroku](demoFIles/HOME_HEROKU.png?raw=true "ADD_Heroku")
 
 ## License
 

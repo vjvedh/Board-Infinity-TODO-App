@@ -67,17 +67,17 @@ To run the project execute:
 npm run start
 ```
 
-Link to Home Page: /
+* Link to Home Page: /
 
 ![HOME_H](demoFIles/HOME_LOCALHOST.png?raw=true "HOME_H")
 
-Link to see all TODO's: /list
+* Link to see all TODO's: /list
 
 ![SHOW_H](demoFIles/GET_LOCALHOST.png?raw=true "SHOW_H")
 
-Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
+* Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
 
-![ADD_H](demoFIles/HOME_LOCALHOST.png?raw=true "ADD_H")
+![ADD_H](demoFIles/POST_LOCALHOST.png?raw=true "ADD_H")
 
 ## App demo
 
@@ -89,7 +89,7 @@ You can also deploy this app to Heroku:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Create a Heroku App and execute these: 
+Create a Heroku App and execute these:
 
 ```bash
 heroku login
@@ -101,17 +101,17 @@ git push heroku master
 
 ```
 
-Link to Home Page: /
+* Link to Home Page: /
 
 ![HOME_Heroku](demoFIles/HOME_HEROKU.png?raw=true "HOME_Heroku")
 
-Link to see all TODO's: /list
+* Link to see all TODO's: /list
 
 ![SHOW_Heroku](demoFIles/GET_HEROKU.png?raw=true "SHOW_Heroku")
 
-Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
+* Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
 
-![ADD_Heroku](demoFIles/HOME_HEROKU.png?raw=true "ADD_Heroku")
+![ADD_Heroku](demoFIles/POST_HEROKU.png?raw=true "ADD_Heroku")
 
 ## License
 

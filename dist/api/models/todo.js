@@ -18,24 +18,20 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TodoSchema = void 0;
 // Importing Mongoose library for creating schema model
 const mongoose_1 = __importStar(require("mongoose"));
-// Importing duration variable from add api response from todocontroller
-const todoController_1 = __importDefault(require("../controllers/todoController"));
 // Schema
 exports.TodoSchema = new mongoose_1.Schema({
     taskName: { type: String, required: true },
     taskDescription: { type: String, required: true },
     creator: { type: String, required: true },
     duration: { type: Number, required: true },
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now, required: false },
+    expireAt: { type: Date, default: Date.now }
 });
 // Passing duration so that it delete the last document at particular time 
-exports.TodoSchema.index({ "createdAt": 1 }, { expireAfterSeconds: todoController_1.default });
+exports.TodoSchema.index({ "expireAt": 1 }, { expireAfterSeconds: 0 });
 const Todo = mongoose_1.default.model("Todo", exports.TodoSchema);
 exports.default = Todo;

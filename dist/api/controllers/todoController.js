@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.add = exports.list = void 0;
 const todo_1 = __importDefault(require("../models/todo"));
 const config_1 = __importDefault(require("../config/config"));
-// Setting a duration variable to store duration period of current todo item added
-var dur = 0;
 // Api Endpoint: After GET resquest is used it will fetch all todos from DB and showing it into web page 
 exports.list = (req, res) => {
     let todos = todo_1.default.find((err, todos) => {
@@ -22,8 +20,16 @@ exports.list = (req, res) => {
 };
 // Api Endpoint: After POST request if fetched it will take the request body mesaage and add it to todo schema in DB. 
 exports.add = (req, res) => {
+    if (req.body.duration === '0') {
+        req.body.expireAt = null;
+    }
+    else {
+        let curr = new Date();
+        let expireDate = new Date(curr);
+        expireDate.setMinutes(curr.getMinutes() + parseInt(req.body.duration));
+        req.body.expireAt = expireDate;
+    }
     var todo = new todo_1.default(req.body);
-    dur = 60 * req.body.duration;
     todo.save((err) => {
         if (err) {
             console.log("Error Adding: " + err);
@@ -35,4 +41,3 @@ exports.add = (req, res) => {
         }
     });
 };
-exports.default = dur;

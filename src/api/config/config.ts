@@ -34,13 +34,14 @@ body, html {height: 100%}
 let tableCreate = function tableCreate(todos: any): string {
     let htmlTableRows = ``;
       let data = {rows: todos};
-      data.rows.forEach((row: { taskName: any; taskDescription: any; creator: any; duration: any; createdAt: any; }) => {
+      data.rows.forEach((row: { taskName: any; taskDescription: any; creator: any; duration: any; createdAt: any; expireAt: any }) => {
       htmlTableRows += `<tr>
         <td>${row.taskName}</td>
         <td>${row.taskDescription}</td>
         <td>${row.creator}</td>
         <td>${row.duration}</td>
         <td>${row.createdAt}</td>
+        <td>${row.expireAt}</td>
       </tr>`;
     });
 
@@ -73,6 +74,7 @@ let tableCreate = function tableCreate(todos: any): string {
                     </th><th>Creator</th>
                     <th>Duration(in mins)</th>
                     <th>Created At</th>
+                    <th>Expire At</th>
                 </tr>
             ${htmlTableRows}
             </table>

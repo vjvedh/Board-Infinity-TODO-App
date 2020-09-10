@@ -67,6 +67,25 @@ To run the project execute:
 npm run start
 ```
 
+### Variables in a TODO task
+
+* Task Name :  String  (required)
+* Task Description : String (required)
+* Creator : String (required)
+* Duration : Number( Time in Minutes ) (required)
+* Created At : Date (Will Fetch current time) (not required)
+* Expire At : Date (Will be calculated automatically)
+
+If Duration is equal to 0: Then task will not be deleted
+
+```bash
+{ "taskName": "HELLO Example",
+  "taskDescription": "HELLO Example",
+  "creator": "USER",
+  "duration": 5
+}
+```
+
 * Link to Home Page: /
 
 ![HOME_H](demoFIles/HOME_LOCALHOST.png?raw=true "HOME_H")
@@ -77,7 +96,8 @@ npm run start
 
 * Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
 
-![ADD_H](demoFIles/POST_LOCALHOST.png?raw=true "ADD_H")
+![ADD_H](demoFIles/POST_LOCALHOST_1.png?raw=true "ADD_H")
+![ADD_H2](demoFIles/POST_LOCALHOST.png?raw=true "ADD_H2")
 
 ## App demo
 
@@ -111,7 +131,8 @@ git push heroku master
 
 * Link to add TODO(use [POSTMAN](https://www.postman.com/) for POST request): /add
 
-![ADD_Heroku](demoFIles/POST_HEROKU.png?raw=true "ADD_Heroku")
+![ADD_Heroku1](demoFIles/POST_HEROKU_1.png?raw=true "ADD_Heroku1")
+![ADD_Heroku2](demoFIles/POST_HEROKU.png?raw=true "ADD_Heroku2")
 
 ## License
 

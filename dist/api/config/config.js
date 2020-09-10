@@ -41,6 +41,7 @@ let tableCreate = function tableCreate(todos) {
         <td>${row.creator}</td>
         <td>${row.duration}</td>
         <td>${row.createdAt}</td>
+        <td>${row.expireAt}</td>
       </tr>`;
     });
     let htmlTable = `<!DOCTYPE html>
@@ -72,6 +73,7 @@ let tableCreate = function tableCreate(todos) {
                     </th><th>Creator</th>
                     <th>Duration(in mins)</th>
                     <th>Created At</th>
+                    <th>Expire At</th>
                 </tr>
             ${htmlTableRows}
             </table>
